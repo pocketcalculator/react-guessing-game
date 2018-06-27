@@ -12,10 +12,14 @@ export default function ValidateGuess(props) {
     }
     else {
       if (Math.abs((guess - answer)) < 6) {
-        return <p>You guessed {guess}. {hot}</p>
+        return <p>
+          You guessed {guess}. {hot}
+        </p>
       }
       else {
-        return <p>You guessed {guess}. {cold}</p>
+        return <p>
+          You guessed {guess}. {cold}
+        </p>
       }
     }
   }

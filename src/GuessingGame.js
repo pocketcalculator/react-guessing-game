@@ -21,9 +21,18 @@ export default class GuessingGame extends React.Component {
     const gameTitle = `I'm thinking of a number...`
     return (
       <div>
-        <p>{gameTitle}</p>
-        <GuessForm guess={guess} guesses={guesses} checkGuess={guess => this.setState({guess})} addGuess={guesses => this.setState({guesses})}/>
-        <ValidateGuess guess={guess} guesses={guesses} answer={answer}/>
+        <p>
+          {gameTitle}
+        </p>
+        <GuessForm
+          guess={guess}
+          guesses={guesses}
+          checkGuess={guess => this.setState({guess})}
+          addGuess={guesses => this.setState({guesses})}/>
+        <ValidateGuess
+          guess={guess}
+          guesses={guesses}
+          answer={answer}/>
         <PrintGuesses guesses={guesses}/>
       </div>
     )
