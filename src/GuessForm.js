@@ -18,7 +18,9 @@ export default class SearchForm extends React.Component {
     return (
         <form onSubmit={this.handleSubmit}>
           <input
-            type="text"
+            type="number"
+            min="0"
+            max="100"
             name="guess"
             id="guess"
             className="number"
