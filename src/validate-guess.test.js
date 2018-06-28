@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ValidateGuess from './ValidateGuess';
+import ValidateGuess from './validate-guess';
 
 describe('<ValidateGuess />', () => {
   it('Renders without crashing', () => {

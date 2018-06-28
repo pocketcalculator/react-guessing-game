@@ -1,8 +1,8 @@
 import React from 'react'
 
-import GuessForm from './GuessForm'
-import ValidateGuess from './ValidateGuess'
-import PrintGuesses from './PrintGuesses'
+import GuessForm from './guess-form'
+import ValidateGuess from './validate-guess'
+import PrintGuesses from './print-guesses'
 
 const answer = Math.floor(Math.random() * 100) + 1
 console.log(answer)
