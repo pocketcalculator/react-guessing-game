@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class SearchForm extends React.Component {
+export default class GuessForm extends React.Component {
 
   handleUpdate = (event) => {
     this.setState({value: event.target.value})
@@ -26,7 +26,7 @@ export default class SearchForm extends React.Component {
             className="number"
             maxLength="3"
             autoComplete="off"
-            placeholder={this.props.guess}
+            placeholder=""
             required
             onChange={this.handleUpdate}
           />

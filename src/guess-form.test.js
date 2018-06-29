@@ -7,18 +7,23 @@ describe('<GuessForm />', () => {
   it('Renders without crashing', () => {
     shallow(<GuessForm />);
   })
-  /*
-  it('Should fire checkGuess if the user submitted input', () => {
-    const callback = jest.fn();
-    const wrapper = mount(<GuessForm guesses={[]} checkGuess={callback} />)
-    const event = {
-      preventDefault() {},
-      target: { value: '10' }
-    }
-    const value = event.target.value
-    wrapper.instance().handleUpdate(event)
-    wrapper.simulate('submit')
-    expect(callback).toHaveBeenCalled()
+  it('Should run the checkGuess and addGuess callbacks when the form is submitted', () => {
+      const checkGuessCallback = jest.fn()
+      const addGuessCallback = jest.fn()
+      const guess = ''
+      const guesses = [1,12,25]
+      const value = 10
+      const wrapper = mount(<GuessForm guess={guess} checkGuess={checkGuessCallback} guesses={guesses} addGuess={addGuessCallback} />)
+      const event = {
+        preventDefault() {},
+        target: {value: 10}
+      }
+      wrapper.setState({value: 10})
+      /*simulate click event into input and typing events*/
+      wrapper.find('input[type="number"]').instance().value = value
+      wrapper.simulate('submit')
+      /*use jest to get checkGuess output*/
+      expect(checkGuessCallback).toBeCalled()
+      expect(addGuessCallback).toBeCalled()
   })
-  */
 })
