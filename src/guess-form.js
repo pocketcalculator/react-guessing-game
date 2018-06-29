@@ -8,10 +8,12 @@ export default class GuessForm extends React.Component {
 
   handleSubmit = (event) => {
     const guessArray = this.props.guesses.slice()
-    guessArray.push(this.state.value)
+    const value = this.input.value
+    guessArray.push(value)
     event.preventDefault()
-    this.props.checkGuess(this.state.value)
+    this.props.checkGuess(value)
     this.props.addGuess(guessArray)
+    this.input.value = ''
   }
 
   render() {
@@ -27,6 +29,7 @@ export default class GuessForm extends React.Component {
             maxLength="3"
             autoComplete="off"
             placeholder=""
+            ref={input => (this.input = input)}
             required
             onChange={this.handleUpdate}
           />
