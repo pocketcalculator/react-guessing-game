@@ -13,7 +13,6 @@ describe('<GuessForm />', () => {
       const guesses = []
       const value = 3
       const wrapper = mount(<GuessForm checkGuess={checkGuessCallback} guesses={guesses} addGuess={addGuessCallback} />)
-      /*simulate click event into input and typing events*/
       wrapper.find('input[type="number"]').instance().value = value
       wrapper.simulate('submit')
       expect(checkGuessCallback).toBeCalled()
@@ -28,16 +27,5 @@ describe('<GuessForm />', () => {
     input.instance().value = 3
     wrapper.simulate('submit')
     expect(input.instance().value).toEqual('')
-  })
-  it('Should add the guess to the array of previous guesses', () => {
-    const checkGuessCallback = jest.fn()
-    const addGuessCallback = jest.fn()
-    const guesses = []
-    const value = 3
-    const wrapper = mount(<GuessForm guesses={guesses} />)
-    /*simulate click event into input and typing events*/
-    wrapper.find('input[type="number"]').instance().value = value
-    wrapper.simulate('submit')
-    console.log(guesses)
   })
 })
