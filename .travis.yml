@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: NjACadMTbJPFlhqmD5yvPcoFDzl54w31v4B4UUNmjFH1G8dp0pM/V3pT9thZglKtvNJIQH2TiT54Yjnn+2FF2hvU0EsMD6X1bdWdxDvNdCh9zWCfQ5cPD1CFM6y8nOXRCWj3pw/zhWye1TImVVmaxUiPLoz5y5UBnXuEWQSiY1GHQ89Hct83B84hkYnqoi8mINMnvkYuFKHK/1GRSSIoO872n2PJbef+a9nFoCQ5E8rMJ4cwijcRobrwHR8+h6qcACCwq1cbe4bTnRuKpEXsUV9TtdFTmYmYJ8q9QTlQT00f9BLqG990RMkHi8piGImcymsVYavr9+H/Kbugcka0jytxV3IKnjby6/RcIZcPxH0wbADnqtt2TyELvY/JwDODtyVYyBMfb39hXT1D1DcCiRPUldNtHyQhvfsJyHT+49nUG7aWpyuh6vF8Gl7dTnmC2/Ghe5OT4p9SDOFpGzlAlXQi7PbO8pqW8tIbCm7gaZoHehaQKOQaHNgdu57AYRTe9LbD12DS9NB/FJP79mJzhwlCLhwfXJNI8GbvKlLcB/3fNHtk2HZT/N+zazfbMr/ltfTdNt8vyPh5BJNXqg2geeUjVpW14FQlEqEgvRN98zBCl3FKHSL3IIpdbZKK67CA1BLYHu5U87CsEgbFIbjl3llpgQya1cOx1vt65PbY+Uw=
+  app: obscure-thicket-27676
+  on:
+    repo: pocketcalculator/react-guessing-game
